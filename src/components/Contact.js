@@ -11,14 +11,15 @@ const Contact = () => {
   const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', subject: '', message: '' });
   const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
   const handleSubmit = e => {
+    e.preventDefault()
+    console.log(encode({ 'form-name': 'contactForm', formData }))
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contactForm', ...this.state })
+      body: encode({ 'form-name': 'contactForm', ...formData })
     })
       .then(() => alert('Success!'))
       .catch(error => alert(error))
-    e.preventDefault()
   };
 
   return (
