@@ -31,9 +31,10 @@ const Contact = () => {
         <form
           className='contact__form'
           onSubmit={handleSubmit}
-          name="contactForm"
+          name="contact-form"
           data-netlify="true"
         >
+          <input type='hidden' name='form-name' value='contact-form' />
           <div className='field__wrapper first-name__wrapper'>
             <label htmlFor='firstName'>First Name</label>
             <input
