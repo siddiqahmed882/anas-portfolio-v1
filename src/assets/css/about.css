@@ -1,0 +1,133 @@
+.split-2 {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 7rem) 0;
+}
+
+/* profile card */
+
+.profile__card {
+  width: 300px;
+  margin-left: auto;
+  overflow: hidden;
+  box-shadow: -11px 12px 17px 0px rgba(138, 131, 124, 0.23);
+  position: relative;
+}
+
+.profile__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0.3rem;
+  background: var(--clr-black-0);
+}
+
+.profile__card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--clr-primary-900);
+  padding: 2rem;
+}
+
+.profile__img {
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.profile__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  width: min-content;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.profile__name::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 50%;
+  transform: translateX(50%);
+  height: 0.3rem;
+  background: var(--clr-accent);
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+}
+
+.profile__card__footer {
+  background: var(--clr-white-1000);
+  padding: 0.5rem 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__card__footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+}
+
+.profile__card__footer a > * {
+  font-size: 1.25rem;
+}
+
+.profile__card__footer a:hover > * {
+  color: var(--clr-accent);
+}
+
+.about {
+  padding: 1rem;
+}
+
+.about__lead {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.about__ctas {
+  margin-bottom: 2rem;
+}
+
+.about__ctas .btn:first-child {
+  margin-right: 1rem;
+}
+
+.about__body p {
+  font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+  .split-2 {
+    grid-template-columns: 1fr;
+  }
+  .profile__card {
+    margin: 0 auto;
+    grid-row: 2;
+  }
+  .about__body {
+    grid-row: 1;
+    font-size: 1.125rem;
+  }
+}
